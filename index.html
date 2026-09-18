@@ -3,373 +3,225 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cabinet Vétérinaire Wouri — cabinet vétérinaire à Douala</title>
-<meta name="description" content="Cabinet vétérinaire à Douala (Bonapriso) : consultations, vaccination, chirurgie, dentisterie et soins d'urgence pour chiens, chats et animaux de compagnie.">
-<style>
-  /* ---------------------------------------------------------------
-     Palette et variables — modifiez ces valeurs pour changer le thème
-     --------------------------------------------------------------- */
-  :root {
-    --vert: #1f6f5c;
-    --vert-fonce: #124436;
-    --vert-clair: #e6f2ee;
-    --teal: #2b8a80;
-    --sable: #fbf9f4;
-    --texte: #1c2320;
-    --texte-doux: #4b5854;
-    --bordure: #d8e4df;
-    --blanc: #ffffff;
-    --rayon: 14px;
-    --ombre: 0 2px 10px rgba(18, 68, 54, .08);
-    --largeur: 68rem;
-  }
+<title>Cabinet Vétérinaire Wouri — clinique vétérinaire à Douala (Bonapriso)</title>
+<meta name="description" content="Clinique vétérinaire à Douala, quartier Bonapriso : consultations, vaccination, chirurgie, imagerie, dentisterie et urgences pour chiens, chats et nouveaux animaux de compagnie.">
+<meta name="theme-color" content="#0f3d38">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Cabinet Vétérinaire Wouri — clinique vétérinaire à Douala">
+<meta property="og:description" content="Une équipe vétérinaire à vos côtés à Bonapriso : médecine préventive, chirurgie, imagerie et urgences.">
 
-  *, *::before, *::after { box-sizing: border-box; }
+<!--
+  Cette page ne contient plus ni CSS ni JavaScript en ligne.
+  Fichiers à créer à côté de index.html :
 
-  html { scroll-behavior: smooth; }
+    assets/css/styles.css   → toute la mise en forme (variables de thème, grilles, composants)
+    assets/js/main.js       → menu mobile, en-tête compact au défilement, accordéon FAQ,
+                              statut « ouvert / fermé » en direct, bouton retour en haut
 
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.65;
-    color: var(--texte);
-    background: var(--sable);
-    -webkit-text-size-adjust: 100%;
-  }
-
-  img, svg { max-width: 100%; }
-
-  a { color: var(--vert-fonce); }
-
-  h1, h2, h3 { line-height: 1.25; color: var(--vert-fonce); }
-
-  .contenu {
-    width: 100%;
-    max-width: var(--largeur);
-    margin: 0 auto;
-    padding: 0 1.25rem;
-  }
-
-  /* ---------- En-tête collant ---------- */
-  .entete {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--blanc);
-    border-bottom: 1px solid var(--bordure);
-  }
-
-  .entete .contenu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: .75rem 1.5rem;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: .55rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--vert-fonce);
-    text-decoration: none;
-    margin-right: auto;
-  }
-
-  .logo svg { flex: none; }
-
-  .nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .25rem 1.25rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color: var(--texte-doux);
-    font-weight: 500;
-    padding: .35rem 0;
-    display: inline-block;
-  }
-
-  .nav a:hover, .nav a:focus { color: var(--vert); text-decoration: underline; }
-
-  /* ---------- Boutons ---------- */
-  .btn {
-    display: inline-block;
-    padding: .7rem 1.25rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid var(--vert);
-    background: var(--vert);
-    color: var(--blanc);
-  }
-
-  .btn:hover, .btn:focus { background: var(--vert-fonce); border-color: var(--vert-fonce); }
-
-  .btn-secondaire {
-    background: transparent;
-    color: var(--vert-fonce);
-  }
-
-  .btn-secondaire:hover, .btn-secondaire:focus { background: var(--vert-clair); color: var(--vert-fonce); }
-
-  a:focus-visible, .btn:focus-visible {
-    outline: 3px solid var(--teal);
-    outline-offset: 2px;
-  }
-
-  /* ---------- Accroche ---------- */
-  .hero {
-    background: linear-gradient(180deg, var(--vert-clair), var(--sable));
-    padding: 3rem 0 2.5rem;
-  }
-
-  .hero h1 {
-    font-size: 1.95rem;
-    margin: 0 0 .75rem;
-    max-width: 20ch;
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-    color: var(--texte-doux);
-    max-width: 52ch;
-    margin: 0 0 1.5rem;
-  }
-
-  .hero-boutons { display: flex; flex-wrap: wrap; gap: .75rem; }
-
-  /* ---------- Sections ---------- */
-  section { padding: 2.75rem 0; }
-
-  section > .contenu > h2 {
-    font-size: 1.5rem;
-    margin: 0 0 .5rem;
-  }
-
-  .intro-section {
-    color: var(--texte-doux);
-    max-width: 58ch;
-    margin: 0 0 1.75rem;
-  }
-
-  .grille {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .carte {
-    background: var(--blanc);
-    border: 1px solid var(--bordure);
-    border-radius: var(--rayon);
-    padding: 1.25rem;
-    box-shadow: var(--ombre);
-  }
-
-  .carte h3 {
-    font-size: 1.1rem;
-    margin: .6rem 0 .4rem;
-  }
-
-  .carte p { margin: 0; color: var(--texte-doux); }
-
-  .icone {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--vert-clair);
-    color: var(--vert-fonce);
-  }
-
-  /* ---------- Bloc confiance ---------- */
-  .confiance { background: var(--vert-fonce); color: var(--blanc); }
-  .confiance h2 { color: var(--blanc); }
-  .confiance .intro-section { color: #d6e7e1; }
-
-  .confiance .carte {
-    background: rgba(255, 255, 255, .07);
-    border-color: rgba(255, 255, 255, .28);
-    box-shadow: none;
-  }
-
-  .confiance .carte h3 { color: var(--blanc); }
-  .confiance .carte p { color: #dcebe6; }
-  .confiance .icone { background: rgba(255, 255, 255, .16); color: var(--blanc); }
-
-  /* ---------- Équipe ---------- */
-  .equipe .carte p.role {
-    color: var(--teal);
-    font-weight: 600;
-    margin: 0 0 .5rem;
-  }
-
-  .placeholder {
-    background: #fff4d6;
-    border-radius: 4px;
-    padding: 0 .25rem;
-  }
-
-  .note-placeholder {
-    font-size: .9rem;
-    color: var(--texte-doux);
-    background: #fff4d6;
-    border-left: 4px solid #d79b00;
-    border-radius: 6px;
-    padding: .6rem .9rem;
-    margin: 0 0 1.5rem;
-  }
-
-  /* ---------- Horaires ---------- */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--blanc);
-    border: 1px solid var(--bordure);
-    border-radius: var(--rayon);
-    overflow: hidden;
-    box-shadow: var(--ombre);
-  }
-
-  caption {
-    text-align: left;
-    color: var(--texte-doux);
-    padding: 0 0 .6rem;
-  }
-
-  th, td {
-    text-align: left;
-    padding: .8rem 1rem;
-    border-bottom: 1px solid var(--bordure);
-  }
-
-  thead th { background: var(--vert-clair); color: var(--vert-fonce); }
-
-  tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
-
-  /* ---------- Contact ---------- */
-  .contact-liste {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-  }
-
-  .contact-liste li {
-    display: flex;
-    gap: .85rem;
-    align-items: flex-start;
-    background: var(--blanc);
-    border: 1px solid var(--bordure);
-    border-radius: var(--rayon);
-    padding: 1rem 1.15rem;
-    box-shadow: var(--ombre);
-  }
-
-  .contact-liste strong { display: block; color: var(--vert-fonce); }
-  .contact-liste span, .contact-liste a { color: var(--texte-doux); }
-
-  /* ---------- Pied de page ---------- */
-  .pied {
-    background: var(--vert-fonce);
-    color: #d6e7e1;
-    padding: 2rem 0;
-    font-size: .95rem;
-  }
-
-  .pied a { color: var(--blanc); }
-  .pied p { margin: .3rem 0; }
-
-  /* ---------- Écrans plus larges ---------- */
-  @media (min-width: 46rem) {
-    .hero { padding: 4.5rem 0 4rem; }
-    .hero h1 { font-size: 2.75rem; }
-    .hero p { font-size: 1.15rem; }
-    section { padding: 4rem 0; }
-    section > .contenu > h2 { font-size: 1.9rem; }
-    .grille { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-    .grille-3 { grid-template-columns: repeat(3, 1fr); }
-    .grille-4 { grid-template-columns: repeat(4, 1fr); }
-    .contact-liste { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-  }
-</style>
+  Les crochets JS utilisés par main.js sont les attributs data-* présents ci-dessous :
+    data-entete, data-menu, data-menu-bouton, data-statut, data-faq, data-haut, data-annee
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
 
-<header class="entete">
-  <div class="contenu">
-    <a class="logo" href="#">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Empreinte de patte">
-        <circle cx="6" cy="9" r="2.2"/>
-        <circle cx="10.5" cy="5.8" r="2.2"/>
-        <circle cx="15.5" cy="5.8" r="2.2"/>
-        <circle cx="20" cy="9" r="2.2"/>
-        <path d="M13 11c2.8 0 5.5 2.1 5.5 4.8 0 2-1.5 3.2-3.4 3.2-1.1 0-1.7-.5-2.1-.5s-1 .5-2.1.5c-1.9 0-3.4-1.2-3.4-3.2C7.5 13.1 10.2 11 13 11z"/>
-      </svg>
-      <!-- Nom du cabinet : à remplacer par le nom réel -->
-      Cabinet Vétérinaire Wouri
+<a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+<!-- Bandeau urgences, en haut de toutes les pages -->
+<div class="bandeau">
+  <div class="contenu bandeau__inner">
+    <p class="bandeau__texte">
+      <span class="pastille" aria-hidden="true"></span>
+      Urgence vétérinaire&nbsp;? Appelez-nous avant de vous déplacer.
+    </p>
+    <!-- NUMÉRO FICTIF — remplacer par le vrai numéro d'urgence -->
+    <a class="bandeau__lien" href="tel:+237600000000">+237 6 00 00 00 00</a>
+  </div>
+</div>
+
+<header class="entete" data-entete>
+  <div class="contenu entete__inner">
+
+    <!-- Nom du cabinet : à remplacer par le nom réel -->
+    <a class="logo" href="#accueil">
+      <span class="logo__marque" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" focusable="false">
+          <circle cx="6" cy="9" r="2.2"/>
+          <circle cx="10.5" cy="5.8" r="2.2"/>
+          <circle cx="15.5" cy="5.8" r="2.2"/>
+          <circle cx="20" cy="9" r="2.2"/>
+          <path d="M13 11c2.8 0 5.5 2.1 5.5 4.8 0 2-1.5 3.2-3.4 3.2-1.1 0-1.7-.5-2.1-.5s-1 .5-2.1.5c-1.9 0-3.4-1.2-3.4-3.2C7.5 13.1 10.2 11 13 11z"/>
+        </svg>
+      </span>
+      <span class="logo__texte">
+        <strong>Cabinet Vétérinaire Wouri</strong>
+        <small>Bonapriso · Douala</small>
+      </span>
     </a>
 
-    <nav class="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#equipe">Équipe</a></li>
-        <li><a href="#horaires">Horaires</a></li>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-bouton>
+      <span class="burger__barres" aria-hidden="true"></span>
+      <span class="burger__texte">Menu</span>
+    </button>
+
+    <nav class="nav" id="menu-principal" aria-label="Navigation principale" data-menu>
+      <ul class="nav__liste">
+        <li><a href="#clinique">La clinique</a></li>
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#equipe">Notre équipe</a></li>
+        <li><a href="#infos">Infos pratiques</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- NUMÉRO FICTIF — remplacer par le vrai numéro du cabinet -->
+      <a class="btn btn--principal nav__cta" href="tel:+237600000000">Prendre rendez-vous</a>
     </nav>
 
-    <!-- Numéro de téléphone : à remplacer par le vrai numéro du cabinet -->
-    <a class="btn" href="tel:+237600000000">Prendre rendez-vous</a>
   </div>
 </header>
 
-<main>
+<main id="contenu">
 
-  <section class="hero" aria-labelledby="titre-hero">
-    <div class="contenu">
-      <h1 id="titre-hero">Prendre soin de vos animaux, au cœur de Douala</h1>
-      <p>
-        Consultations, vaccinations, chirurgie et soins d'urgence pour chiens, chats et
-        nouveaux animaux de compagnie — dans un cabinet calme, accueillant et proche de chez vous,
-        à Bonapriso.
+  <!-- ============ Accroche ============ -->
+  <section class="hero" id="accueil" aria-labelledby="titre-hero">
+    <div class="hero__media" aria-hidden="true"></div>
+
+    <div class="contenu hero__inner">
+      <p class="hero__surtitre">Clinique vétérinaire de proximité</p>
+      <h1 id="titre-hero">Cabinet Vétérinaire Wouri</h1>
+      <p class="hero__texte">
+        Chiens, chats et nouveaux animaux de compagnie&nbsp;: une équipe qui prend le temps
+        d'examiner, d'expliquer et de suivre chaque animal, de la première visite
+        aux soins les plus délicats.
       </p>
-      <div class="hero-boutons">
-        <!-- Numéro de téléphone : à remplacer par le vrai numéro du cabinet -->
-        <a class="btn" href="tel:+237600000000">Appeler pour un rendez-vous</a>
-        <a class="btn btn-secondaire" href="#contact">Nous trouver</a>
+      <div class="hero__actions">
+        <!-- NUMÉRO FICTIF — remplacer par le vrai numéro du cabinet -->
+        <a class="btn btn--principal" href="tel:+237600000000">Appeler la clinique</a>
+        <a class="btn btn--fantome" href="#contact">Nous trouver</a>
       </div>
+    </div>
+
+    <div class="contenu">
+      <ul class="infos-rapides">
+
+        <li class="info-rapide">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+          </span>
+          <div>
+            <h2>Aujourd'hui</h2>
+            <!-- Le texte ci-dessous est remplacé par main.js (ouvert / fermé selon l'heure) -->
+            <p class="info-rapide__valeur" data-statut>08h00 – 18h00</p>
+            <a class="lien-fleche" href="#horaires">Tous les horaires</a>
+          </div>
+        </li>
+
+        <li class="info-rapide">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
+            </svg>
+          </span>
+          <div>
+            <h2>Téléphone</h2>
+            <!-- NUMÉRO FICTIF — remplacer par le vrai numéro du cabinet -->
+            <p class="info-rapide__valeur"><a href="tel:+237600000000">+237 6 00 00 00 00</a></p>
+            <span class="info-rapide__note">Consultations sur rendez-vous</span>
+          </div>
+        </li>
+
+        <li class="info-rapide">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </span>
+          <div>
+            <h2>Adresse</h2>
+            <!-- ADRESSE FICTIVE — remplacer par l'adresse réelle du cabinet -->
+            <p class="info-rapide__valeur">123, rue des Manguiers, Bonapriso</p>
+            <span class="info-rapide__note">Douala, Cameroun</span>
+          </div>
+        </li>
+
+      </ul>
     </div>
   </section>
 
-  <section id="services" aria-labelledby="titre-services">
-    <div class="contenu">
-      <h2 id="titre-services">Nos services</h2>
-      <p class="intro-section">
-        Une prise en charge complète, de la visite de routine aux interventions plus délicates.
-      </p>
+  <!-- ============ Présentation ============ -->
+  <section class="section" id="clinique" aria-labelledby="titre-clinique">
+    <div class="contenu duo">
+      <div class="duo__texte">
+        <p class="surtitre">Bienvenue</p>
+        <h2 id="titre-clinique">Une clinique pensée pour rassurer les animaux… et leurs propriétaires</h2>
+        <p>
+          Installés à Bonapriso, nous accueillons les animaux de compagnie de Douala et des
+          quartiers voisins. Salle d'attente séparée pour les chats, consultations sans
+          précipitation, matériel d'analyse et d'imagerie sur place&nbsp;: tout est organisé
+          pour poser un diagnostic vite et bien, sans multiplier les déplacements.
+        </p>
+        <p>
+          Nous croyons qu'un propriétaire bien informé soigne mieux. À chaque visite, vous
+          repartez avec des explications claires, un plan de soins écrit et la possibilité
+          de nous rappeler si une question surgit à la maison.
+        </p>
+        <ul class="liste-coches">
+          <li>Consultations sur rendez-vous, du lundi au samedi</li>
+          <li>Urgences prises en charge en priorité</li>
+          <li>Dossier médical et rappels de vaccins pour chaque animal</li>
+          <li>Devis avant toute intervention chirurgicale</li>
+        </ul>
+      </div>
 
-      <div class="grille grille-3">
+      <aside class="duo__aparte">
+        <h3>En quelques chiffres</h3>
+        <dl class="chiffres">
+          <div>
+            <dt>Animaux suivis</dt>
+            <dd><span class="placeholder">1 200+ (exemple)</span></dd>
+          </div>
+          <div>
+            <dt>Vétérinaires</dt>
+            <dd><span class="placeholder">3 (exemple)</span></dd>
+          </div>
+          <div>
+            <dt>Ouverture</dt>
+            <dd><span class="placeholder">depuis 2014 (exemple)</span></dd>
+          </div>
+        </dl>
+        <p class="note">
+          <strong>À remplacer&nbsp;:</strong> ces chiffres sont des exemples, à ajuster avec
+          les données réelles du cabinet.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ Services ============ -->
+  <section class="section section--claire" id="services" aria-labelledby="titre-services">
+    <div class="contenu">
+      <header class="section__entete">
+        <p class="surtitre">Nos services</p>
+        <h2 id="titre-services">Des soins complets, du contrôle de routine à la chirurgie</h2>
+        <p class="section__intro">
+          Chaque prestation est assurée sur place, par l'équipe qui connaît déjà votre animal.
+        </p>
+      </header>
+
+      <div class="grille grille--3">
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Stéthoscope">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
               <path d="M5 3v6a4 4 0 0 0 8 0V3"/>
               <path d="M9 13v2a5 5 0 0 0 10 0v-2"/>
               <circle cx="19" cy="11" r="2"/>
@@ -380,8 +232,8 @@
         </article>
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Seringue">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
               <path d="M18 2l4 4"/>
               <path d="M16.5 4.5l3 3"/>
               <path d="M19 7L9 17l-4 1 1-4L16 4z"/>
@@ -393,20 +245,20 @@
         </article>
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bistouri">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
               <path d="M4 20l6-6"/>
               <path d="M9 13L19 3l2 2-8 10z"/>
               <path d="M3 21h6"/>
             </svg>
           </span>
           <h3>Chirurgie et stérilisation</h3>
-          <p>Interventions courantes et stérilisations réalisées en bloc dédié, avec anesthésie surveillée et suivi post-opératoire.</p>
+          <p>Interventions courantes et stérilisations en bloc dédié, avec anesthésie surveillée et suivi post-opératoire.</p>
         </article>
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Dent">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
               <path d="M12 3c3 0 5 1.5 5 4 0 3-1 5-1.5 8.5C15.2 18 14.6 20 13.5 20S12.6 17 12 17s-.4 3-1.5 3S8.8 18 8.5 15.5C8 12 7 10 7 7c0-2.5 2-4 5-4z"/>
             </svg>
           </span>
@@ -415,25 +267,27 @@
         </article>
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Croix médicale">
-              <path d="M12 4v16"/>
-              <path d="M4 12h16"/>
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <path d="M6 20h12"/>
+              <path d="M9 17h7a5 5 0 0 0 0-10"/>
+              <path d="M10 4l4 2-3 5-4-2z"/>
+              <path d="M8 11l2 1"/>
             </svg>
           </span>
-          <h3>Soins d'urgence</h3>
-          <p>Accueil rapide en cas d'accident, d'intoxication ou de détresse respiratoire, avec stabilisation sur place.</p>
+          <h3>Imagerie et laboratoire</h3>
+          <p>Radiographie, échographie et analyses sanguines réalisées sur place, avec résultats commentés le jour même.</p>
         </article>
 
         <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Gamelle et feuille">
+          <span class="icone" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
               <path d="M3 13h18a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7z"/>
               <path d="M12 10c0-3 2-5 5-5 0 3-2 5-5 5z"/>
               <path d="M12 10V7"/>
             </svg>
           </span>
-          <h3>Conseils nutrition et comportement</h3>
+          <h3>Nutrition et comportement</h3>
           <p>Rations adaptées à l'âge et à l'activité, gestion du poids et accompagnement sur les troubles du comportement.</p>
         </article>
 
@@ -441,96 +295,82 @@
     </div>
   </section>
 
-  <section class="confiance" aria-labelledby="titre-confiance">
-    <div class="contenu">
-      <h2 id="titre-confiance">Pourquoi nous choisir</h2>
-      <p class="intro-section">
-        Une équipe que vous reconnaissez d'une visite à l'autre, et des explications claires à chaque étape.
-      </p>
-
-      <div class="grille grille-4">
-
-        <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Diplôme">
-              <circle cx="12" cy="9" r="5"/>
-              <path d="M9 13.5L8 21l4-2 4 2-1-7.5"/>
-            </svg>
-          </span>
-          <h3>Équipe diplômée</h3>
-          <p>Des vétérinaires formés et régulièrement mis à jour sur les pratiques cliniques actuelles.</p>
-        </article>
-
-        <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Microscope">
-              <path d="M6 20h12"/>
-              <path d="M9 17h7a5 5 0 0 0 0-10"/>
-              <path d="M10 4l4 2-3 5-4-2z"/>
-              <path d="M8 11l2 1"/>
-            </svg>
-          </span>
-          <h3>Matériel moderne</h3>
-          <p>Laboratoire, imagerie et bloc opératoire équipés pour poser un diagnostic rapidement.</p>
-        </article>
-
-        <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Horloge">
-              <circle cx="12" cy="12" r="9"/>
-              <path d="M12 7v5l3 2"/>
-            </svg>
-          </span>
-          <h3>Urgences</h3>
-          <p>Une ligne dédiée le dimanche et en soirée pour les situations qui ne peuvent pas attendre.</p>
-        </article>
-
-        <article class="carte">
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cœur">
-              <path d="M12 20s-7-4.6-7-9.3A4 4 0 0 1 12 8a4 4 0 0 1 7 2.7C19 15.4 12 20 12 20z"/>
-            </svg>
-          </span>
-          <h3>Suivi personnalisé</h3>
-          <p>Un dossier tenu pour chaque animal, des rappels de vaccins et un appel après les interventions.</p>
-        </article>
-
+  <!-- ============ Urgences ============ -->
+  <section class="urgences" aria-labelledby="titre-urgences">
+    <div class="contenu urgences__inner">
+      <div>
+        <p class="surtitre surtitre--clair">Urgences</p>
+        <h2 id="titre-urgences">Une ligne dédiée quand cela ne peut pas attendre</h2>
+        <p>
+          Accident de la route, intoxication, difficulté à respirer, vomissements répétés&nbsp;:
+          appelez avant de venir. Nous préparons la salle de soins pendant votre trajet et
+          vous guidons sur les gestes à faire — et surtout à ne pas faire.
+        </p>
+      </div>
+      <div class="urgences__actions">
+        <!-- NUMÉRO FICTIF — remplacer par le vrai numéro d'urgence -->
+        <a class="btn btn--clair" href="tel:+237600000000">Appeler les urgences</a>
+        <p class="urgences__note">Soirées et dimanches&nbsp;: sur appel uniquement.</p>
       </div>
     </div>
   </section>
 
-  <section id="equipe" class="equipe" aria-labelledby="titre-equipe">
+  <!-- ============ Équipe ============ -->
+  <section class="section" id="equipe" aria-labelledby="titre-equipe">
     <div class="contenu">
-      <h2 id="titre-equipe">Notre équipe</h2>
-      <p class="intro-section">
-        Trois vétérinaires complémentaires, disponibles du lundi au samedi.
+      <header class="section__entete">
+        <p class="surtitre">Notre équipe</p>
+        <h2 id="titre-equipe">Des visages que vous retrouvez d'une visite à l'autre</h2>
+        <p class="section__intro">
+          Trois vétérinaires complémentaires, épaulés par une équipe d'assistants, disponibles
+          du lundi au samedi.
+        </p>
+      </header>
+
+      <p class="note">
+        <strong>À remplacer&nbsp;:</strong> les noms, titres et descriptions ci-dessous sont des
+        exemples fictifs. Remplacez-les par les informations réelles de l'équipe (et, idéalement,
+        par de vraies photos).
       </p>
 
-      <p class="note-placeholder">
-        <strong>À remplacer :</strong> les noms, titres et descriptions ci-dessous sont des exemples fictifs.
-        Remplacez-les par les informations réelles de l'équipe.
-      </p>
+      <div class="grille grille--3">
 
-      <div class="grille grille-3">
-
-        <!-- Vétérinaire 1 : nom et bio à remplacer -->
-        <article class="carte">
+        <!-- Vétérinaire 1 : nom, photo et bio à remplacer -->
+        <article class="carte carte--personne">
+          <div class="portrait" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="12" cy="9" r="3.5"/>
+              <path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+            </svg>
+          </div>
           <h3><span class="placeholder">Dr Nom Prénom (exemple)</span></h3>
-          <p class="role">Vétérinaire, médecine générale</p>
+          <p class="role">Vétérinaire — médecine générale</p>
           <p>Suit les consultations de routine et la médecine préventive. Particulièrement à l'aise avec les animaux anxieux.</p>
         </article>
 
-        <!-- Vétérinaire 2 : nom et bio à remplacer -->
-        <article class="carte">
+        <!-- Vétérinaire 2 : nom, photo et bio à remplacer -->
+        <article class="carte carte--personne">
+          <div class="portrait" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="12" cy="9" r="3.5"/>
+              <path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+            </svg>
+          </div>
           <h3><span class="placeholder">Dr Nom Prénom (exemple)</span></h3>
-          <p class="role">Vétérinaire, chirurgie</p>
-          <p>Responsable du bloc opératoire : stérilisations, chirurgies des tissus mous et suivi post-opératoire.</p>
+          <p class="role">Vétérinaire — chirurgie</p>
+          <p>Responsable du bloc opératoire&nbsp;: stérilisations, chirurgies des tissus mous et suivi post-opératoire.</p>
         </article>
 
-        <!-- Vétérinaire 3 : nom et bio à remplacer -->
-        <article class="carte">
+        <!-- Vétérinaire 3 : nom, photo et bio à remplacer -->
+        <article class="carte carte--personne">
+          <div class="portrait" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="12" cy="9" r="3.5"/>
+              <path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+            </svg>
+          </div>
           <h3><span class="placeholder">Dr Nom Prénom (exemple)</span></h3>
-          <p class="role">Vétérinaire, dentisterie et nutrition</p>
+          <p class="role">Vétérinaire — dentisterie et nutrition</p>
           <p>Prend en charge les soins dentaires et accompagne les propriétaires sur l'alimentation et le poids.</p>
         </article>
 
@@ -538,16 +378,74 @@
     </div>
   </section>
 
-  <section id="horaires" aria-labelledby="titre-horaires">
+  <!-- ============ Infos pratiques ============ -->
+  <section class="section section--claire" id="infos" aria-labelledby="titre-infos">
     <div class="contenu">
-      <h2 id="titre-horaires">Horaires d'ouverture</h2>
-      <p class="intro-section">
-        Consultations sur rendez-vous ; les urgences sont prises en charge en priorité.
-      </p>
+      <header class="section__entete">
+        <p class="surtitre">Infos pratiques</p>
+        <h2 id="titre-infos">Préparer votre visite</h2>
+        <p class="section__intro">
+          Quelques repères pour que le rendez-vous se passe sereinement, pour vous comme pour votre animal.
+        </p>
+      </header>
 
-      <!-- Horaires : à vérifier et remplacer par les horaires réels du cabinet -->
-      <table>
-        <caption>Horaires indicatifs — à confirmer par téléphone.</caption>
+      <div class="grille grille--2">
+
+        <article class="carte carte--plate">
+          <h3>Accès et stationnement</h3>
+          <p>
+            <span class="placeholder">À compléter (exemple)&nbsp;:</span> la clinique se situe au
+            rez-de-chaussée, l'entrée est de plain-pied. Stationnement possible devant le bâtiment.
+          </p>
+        </article>
+
+        <article class="carte carte--plate">
+          <h3>Le jour du rendez-vous</h3>
+          <p>
+            Venez avec le carnet de santé, les ordonnances en cours et, si possible, les résultats
+            d'analyses récents. Chats et NAC en caisse de transport, chiens tenus en laisse.
+          </p>
+        </article>
+
+        <article class="carte carte--plate">
+          <h3>Paiement</h3>
+          <p>
+            <span class="placeholder">À confirmer (exemple)&nbsp;:</span> espèces et paiement mobile
+            acceptés. Un devis écrit vous est remis avant toute intervention chirurgicale.
+          </p>
+        </article>
+
+        <article class="carte carte--plate">
+          <h3>Suivi après la visite</h3>
+          <p>
+            Après une chirurgie ou une hospitalisation, nous vous rappelons pour prendre des nouvelles.
+            Vous pouvez aussi nous écrire sur WhatsApp pour une question rapide.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Horaires ============ -->
+  <section class="section" id="horaires" aria-labelledby="titre-horaires">
+    <div class="contenu duo duo--inverse">
+      <div class="duo__texte">
+        <p class="surtitre">Horaires</p>
+        <h2 id="titre-horaires">Quand nous rendre visite</h2>
+        <p>
+          Les consultations se font sur rendez-vous&nbsp;; les urgences sont prises en charge en
+          priorité, y compris pendant les plages de consultation.
+        </p>
+        <p class="note">
+          <strong>À vérifier&nbsp;:</strong> ces horaires sont indicatifs. Remplacez-les par les
+          horaires réels du cabinet.
+        </p>
+      </div>
+
+      <!-- Horaires : à remplacer par les horaires réels du cabinet -->
+      <table class="horaires">
+        <caption>Horaires d'ouverture — à confirmer par téléphone.</caption>
         <thead>
           <tr>
             <th scope="col">Jour</th>
@@ -572,87 +470,257 @@
     </div>
   </section>
 
-  <section id="contact" aria-labelledby="titre-contact">
+  <!-- ============ FAQ ============ -->
+  <section class="section section--claire" id="faq" aria-labelledby="titre-faq">
+    <div class="contenu contenu--etroit">
+      <header class="section__entete">
+        <p class="surtitre">Questions fréquentes</p>
+        <h2 id="titre-faq">Ce que l'on nous demande le plus souvent</h2>
+      </header>
+
+      <div class="faq" data-faq>
+
+        <details class="faq__item">
+          <summary>Faut-il prendre rendez-vous&nbsp;?</summary>
+          <div class="faq__reponse">
+            <p>
+              Oui pour les consultations, afin de limiter l'attente. Les urgences, elles, sont
+              reçues sans rendez-vous&nbsp;: appelez-nous simplement avant de partir.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>À quel âge vacciner un chiot ou un chaton&nbsp;?</summary>
+          <div class="faq__reponse">
+            <p>
+              La primo-vaccination commence généralement vers 8 semaines, avec un rappel trois à
+              quatre semaines plus tard. Le protocole exact dépend de l'animal et de son mode de vie.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>Mon animal doit-il être à jeun avant une chirurgie&nbsp;?</summary>
+          <div class="faq__reponse">
+            <p>
+              Oui&nbsp;: pas de nourriture la nuit précédant l'intervention, mais l'eau reste à
+              disposition. Les consignes précises vous sont remises lors de la consultation pré-opératoire.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>Recevez-vous les nouveaux animaux de compagnie&nbsp;?</summary>
+          <div class="faq__reponse">
+            <p>
+              Lapins, cochons d'Inde et rongeurs sont reçus en consultation. Pour les reptiles et
+              les oiseaux, appelez-nous&nbsp;: nous vous dirons si nous pouvons les prendre en charge.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>Comment obtenir un rappel de vaccin&nbsp;?</summary>
+          <div class="faq__reponse">
+            <p>
+              Chaque animal suivi a un dossier chez nous&nbsp;; nous vous prévenons avant l'échéance.
+              Vous pouvez aussi nous appeler pour vérifier la date du prochain rappel.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section class="section" id="contact" aria-labelledby="titre-contact">
     <div class="contenu">
-      <h2 id="titre-contact">Nous contacter</h2>
-      <p class="intro-section">
-        Appelez-nous pour fixer un rendez-vous, ou passez directement au cabinet à Bonapriso.
+      <header class="section__entete">
+        <p class="surtitre">Contact</p>
+        <h2 id="titre-contact">Nous joindre et nous trouver</h2>
+        <p class="section__intro">
+          Appelez-nous pour fixer un rendez-vous, ou passez directement au cabinet à Bonapriso.
+        </p>
+      </header>
+
+      <p class="note">
+        <strong>À remplacer&nbsp;:</strong> adresse, téléphone, e-mail et WhatsApp ci-dessous sont
+        des exemples. Chaque valeur est signalée par un commentaire dans le code source.
       </p>
 
-      <p class="note-placeholder">
-        <strong>À remplacer :</strong> adresse, téléphone, e-mail et WhatsApp ci-dessous sont des exemples.
-        Chaque valeur est signalée par un commentaire dans le code source.
-      </p>
+      <div class="contact">
+        <ul class="contact__liste">
 
-      <ul class="contact-liste">
+          <li>
+            <span class="icone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Adresse</strong>
+              <!-- ADRESSE FICTIVE — remplacer par l'adresse réelle du cabinet -->
+              <span>123, rue des Manguiers, Bonapriso<br>Douala, Cameroun</span>
+            </div>
+          </li>
 
-        <li>
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Adresse">
-              <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/>
-              <circle cx="12" cy="10" r="2.5"/>
-            </svg>
-          </span>
-          <div>
-            <strong>Adresse</strong>
-            <!-- ADRESSE FICTIVE — remplacer par l'adresse réelle du cabinet -->
-            <span>123, rue des Manguiers, Bonapriso<br>Douala, Cameroun</span>
+          <li>
+            <span class="icone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Téléphone</strong>
+              <!-- NUMÉRO FICTIF — remplacer par le vrai numéro du cabinet -->
+              <a href="tel:+237600000000">+237 6 00 00 00 00</a>
+            </div>
+          </li>
+
+          <li>
+            <span class="icone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+            </span>
+            <div>
+              <strong>E-mail</strong>
+              <!-- E-MAIL FICTIF — remplacer par l'adresse e-mail réelle -->
+              <a href="mailto:contact@exemple.cm">contact@exemple.cm</a>
+            </div>
+          </li>
+
+          <li>
+            <span class="icone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>WhatsApp</strong>
+              <!-- NUMÉRO WHATSAPP FICTIF — remplacer par le vrai numéro WhatsApp -->
+              <span>Écrivez-nous au +237 6 00 00 00 00 pour une question rapide.</span>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Emplacement de la carte : insérer ici l'iframe Google Maps ou OpenStreetMap du cabinet -->
+        <div class="carte-plan">
+          <div class="carte-plan__vide">
+            <span class="icone" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/>
+                <path d="M9 4v14M15 6v14"/>
+              </svg>
+            </span>
+            <p><strong>Plan d'accès</strong></p>
+            <p class="note note--discrete">
+              À remplacer par la carte du cabinet (iframe Google&nbsp;Maps ou OpenStreetMap).
+            </p>
           </div>
-        </li>
-
-        <li>
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Téléphone">
-              <path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
-            </svg>
-          </span>
-          <div>
-            <strong>Téléphone</strong>
-            <!-- NUMÉRO FICTIF — remplacer par le vrai numéro du cabinet -->
-            <a href="tel:+237600000000">+237 6 00 00 00 00</a>
-          </div>
-        </li>
-
-        <li>
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Enveloppe">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="M3 7l9 6 9-6"/>
-            </svg>
-          </span>
-          <div>
-            <strong>E-mail</strong>
-            <!-- E-MAIL FICTIF — remplacer par l'adresse e-mail réelle -->
-            <a href="mailto:contact@exemple.cm">contact@exemple.cm</a>
-          </div>
-        </li>
-
-        <li>
-          <span class="icone">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bulle de message">
-              <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>
-            </svg>
-          </span>
-          <div>
-            <strong>WhatsApp</strong>
-            <!-- NUMÉRO WHATSAPP FICTIF — remplacer par le vrai numéro WhatsApp -->
-            <span>Écrivez-nous sur WhatsApp au +237 6 00 00 00 00 pour une question rapide.</span>
-          </div>
-        </li>
-
-      </ul>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="pied">
-  <div class="contenu">
-    <!-- Nom du cabinet : à remplacer par le nom réel -->
-    <p>© 2026 Cabinet Vétérinaire Wouri — Bonapriso, Douala, Cameroun.</p>
-    <p>Consultations sur rendez-vous. Urgences : <a href="tel:+237600000000">+237 6 00 00 00 00</a><!-- NUMÉRO FICTIF — à remplacer --></p>
+  <div class="contenu pied__grille">
+
+    <div class="pied__bloc">
+      <!-- Nom du cabinet : à remplacer par le nom réel -->
+      <p class="pied__titre">Cabinet Vétérinaire Wouri</p>
+      <p>
+        123, rue des Manguiers, Bonapriso<br>
+        Douala, Cameroun
+      </p>
+      <!-- NUMÉRO FICTIF — à remplacer -->
+      <p><a href="tel:+237600000000">+237 6 00 00 00 00</a></p>
+      <!-- E-MAIL FICTIF — à remplacer -->
+      <p><a href="mailto:contact@exemple.cm">contact@exemple.cm</a></p>
+    </div>
+
+    <nav class="pied__bloc" aria-label="Plan du site">
+      <p class="pied__titre">La clinique</p>
+      <ul>
+        <li><a href="#clinique">Présentation</a></li>
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#equipe">Notre équipe</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pied__bloc" aria-label="Informations">
+      <p class="pied__titre">Informations</p>
+      <ul>
+        <li><a href="#infos">Infos pratiques</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- Pages à créer si besoin -->
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </nav>
+
+    <div class="pied__bloc">
+      <p class="pied__titre">Urgences</p>
+      <p>Soirées et dimanches, sur appel uniquement.</p>
+      <!-- NUMÉRO FICTIF — à remplacer -->
+      <a class="btn btn--clair btn--petit" href="tel:+237600000000">Appeler maintenant</a>
+    </div>
+
+  </div>
+
+  <div class="contenu pied__bas">
+    <p>© <span data-annee>2026</span> Cabinet Vétérinaire Wouri — Bonapriso, Douala, Cameroun.</p>
+    <p>Consultations sur rendez-vous.</p>
   </div>
 </footer>
+
+<button class="haut" type="button" data-haut hidden>
+  <span class="sr-only">Revenir en haut de la page</span>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <path d="M12 19V5"/>
+    <path d="M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- Données structurées : valeurs fictives, à remplacer en même temps que le contenu de la page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Cabinet Vétérinaire Wouri",
+  "description": "Clinique vétérinaire à Douala (Bonapriso) : consultations, vaccination, chirurgie, imagerie, dentisterie et urgences.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123, rue des Manguiers, Bonapriso",
+    "addressLocality": "Douala",
+    "addressCountry": "CM"
+  },
+  "telephone": "+237600000000",
+  "email": "contact@exemple.cm",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "14:00"
+    }
+  ]
+}
+</script>
 
 </body>
 </html>
